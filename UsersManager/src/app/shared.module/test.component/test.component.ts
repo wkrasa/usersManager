@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// import { setInterval } from 'timers';
 
 @Component({
   selector: 'test',
@@ -12,7 +13,8 @@ export class TestComponent implements OnInit
   
 
   @Input() message: string;
-    constructor() {
+  constructor() {
+    setInterval(() => this.data.check = !this.data.check, 1000);
     }
 
   ngOnInit() {
@@ -24,5 +26,6 @@ export class TestComponent implements OnInit
     console.log('test: ', event.checked, this.data.check);
 
   }
+  
 
 }

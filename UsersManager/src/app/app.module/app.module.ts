@@ -12,9 +12,7 @@ import { SharedModule } from '../shared.module/shared.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    BrowserModule,
-    SharedModule
+    SharedModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]
