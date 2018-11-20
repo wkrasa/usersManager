@@ -43,3 +43,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+.vs/
+UsersApi/obj/
+UsersApi/bin/
+UsersApi/wwwroot/
+

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialImportModule } from './material-import.module';
 
@@ -22,6 +23,7 @@ const sharedModules = [
 
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
     MaterialImportModule,
