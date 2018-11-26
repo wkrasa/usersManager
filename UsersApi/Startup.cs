@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using UsersApi.UsersApi.Core;
 
 namespace UsersApi
 {
@@ -18,6 +19,7 @@ namespace UsersApi
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
+			DataStore.CreateData();
 		}
 
 		public IConfiguration Configuration { get; }
@@ -41,8 +43,11 @@ namespace UsersApi
 				app.UseHsts();
 			}
 
-			app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
+			app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
+			.WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
+			.WithHeaders("Content-Type"));
 			app.UseHttpsRedirection();
+			app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 			app.UseMvc();
 		}
 	}

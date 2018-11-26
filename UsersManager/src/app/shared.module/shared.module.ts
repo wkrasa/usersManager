@@ -31,8 +31,13 @@ const sharedModules = [
   declarations: sharedModules,
   exports: [    
     FormsModule,
-    MaterialImportModule
-  ].concat(sharedModules),
+    MaterialImportModule,
+    ContentComponent,
+    FooterComponent,
+    HeaderComponent,
+    SideComponent,
+    TestComponent
+  ],
     providers: [
       ]
 })
