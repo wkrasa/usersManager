@@ -8,11 +8,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\app\core.module\index.ts" />
+    <None Remove="src\app\core.module\Models\Gender.ts" />
+    <None Remove="src\app\core.module\Models\index.ts" />
+    <None Remove="src\app\core.module\Models\User.ts" />
+    <None Remove="src\app\core.module\web.config.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="src\app\core.module\Models\gender.ts" />
+    <Compile Include="src\app\core.module\Models\index.ts" />
+    <Compile Include="src\app\core.module\Models\user.ts" />
+    <Compile Include="src\app\core.module\index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\core.module\web.config.ts" />
   </ItemGroup>
 
 </Project>

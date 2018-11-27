@@ -11,6 +11,10 @@ namespace UsersApi.UsersApi.Domain
 		public string Email { get; set; }
 		public string Login { get; set; }
 		public string Password { get; set; }
+		public Gender Gender { get; set; }
+
+		public DateTime? LastLogin { get; set; }
+
 		public bool IsActive { get; set; }
 
 		public IList<RoleGroup> Groups { get; set; }
@@ -18,6 +22,7 @@ namespace UsersApi.UsersApi.Domain
 		{
 			this.IsActive = true;
 			this.Groups = new List<RoleGroup>();
+			this.LastLogin = DateTime.Now;
 		}
 
 		public void AddUserToGroup(RoleGroup group)

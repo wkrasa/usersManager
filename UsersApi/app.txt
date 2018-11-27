@@ -1,0 +1,27 @@
++ create new angular solution + project
++ add material css
++ add bootstrap
++ search for controls
+- search for charts
++ configure CORS
++ add second project for backend API
+- add providers for constant and data (reference object)
+- add mapToType extension function, which will map Object to provided type or object (Object => User)
+- routing
+- create users api
+-- users list
+-- create/edit/delete user
+- login + register forms
++ left side menu
+- admin panel
+- roles+rights
+- http auth interceptors
+- angular native for mobile
+- tests (unit + intergration - jasmine)
+
+- configure keycloak
+- docker
+- microservices (second project)?
+
+
+-- less or sass
