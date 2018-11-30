@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component/app.component';
 import { CoreModule, WEB_CONFIG, WebConfig, SHARED_DATA, SharedData } from '../core.module';
@@ -11,13 +12,13 @@ import { SharedModule } from '../shared.module/shared.module';
     AppComponent
   ],
   imports: [
+    RouterModule.forRoot([], { enableTracing: true }),
     BrowserModule,
     CoreModule,
     SharedModule,    
   ],
   providers: [
-    { provide: WEB_CONFIG, useValue: WebConfig },
-    { provide: SHARED_DATA, useValue: SharedData }
+
   ],
   bootstrap: [AppComponent]
 })

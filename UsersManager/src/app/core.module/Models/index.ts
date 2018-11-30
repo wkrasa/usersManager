@@ -1,3 +1,3 @@
-export * from './Gender';
-export * from './User';
+export * from './gender';
+export * from './user';
 

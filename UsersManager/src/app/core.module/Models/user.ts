@@ -1,10 +1,10 @@
 
-import { Gender } from './Gender';
+import { Gender } from './gender';
 
 	export class User
         {
 
-  id : number;
+  id? : number;
   email: string;
  login: string ;
   password : string;

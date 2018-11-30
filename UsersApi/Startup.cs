@@ -50,9 +50,11 @@ namespace UsersApi
 				app.UseHsts();
 			}
 
-			app.UseCors(builder => builder.WithOrigins("http://localhost:4200")
-			.WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
-			.WithHeaders("Content-Type"));
+			app.UseCors(builder => builder
+			.AllowAnyOrigin()
+			.AllowAnyMethod()
+			.AllowAnyHeader()
+			.AllowCredentials());
 			app.UseHttpsRedirection();
 			app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 			app.UseMvc();

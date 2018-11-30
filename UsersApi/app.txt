@@ -5,9 +5,21 @@
 - search for charts
 + configure CORS
 + add second project for backend API
-- add providers for constant and data (reference object)
++ date deserialization
+- http://jasonwatmore.com/post/2018/05/16/angular-6-user-registration-and-login-example-tutorial
++ auth service for angular
+- auth service for backend
+- modal dialog service
+- popup service
+- global mechanism showing communication error
++ add providers for constant and data (reference object)
+- .net core api: simplest authentication possible (header or token, etc...)
+- add login page
+- form validation basing on 401 response
++ add http 401 iterceptor
 - add mapToType extension function, which will map Object to provided type or object (Object => User)
 - routing
+- api for filtering with GET
 - create users api
 -- users list
 -- create/edit/delete user
@@ -23,5 +35,6 @@
 - docker
 - microservices (second project)?
 
-
+- add MSSql server database
+- add nhibernate 
 -- less or sass

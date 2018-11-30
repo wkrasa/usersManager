@@ -8,18 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\app\app.module\user.ts" />
     <None Remove="src\app\core.module\index.ts" />
-    <None Remove="src\app\core.module\Models\Gender.ts" />
-    <None Remove="src\app\core.module\Models\index.ts" />
-    <None Remove="src\app\core.module\Models\User.ts" />
+    <None Remove="src\app\core.module\infrastructure\index.ts" />
+    <None Remove="src\app\core.module\models\Gender.ts" />
+    <None Remove="src\app\core.module\models\index.ts" />
+    <None Remove="src\app\core.module\models\User.ts" />
+    <None Remove="src\app\core.module\services\index.ts" />
     <None Remove="src\app\core.module\web.config.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="src\app\core.module\Models\gender.ts" />
-    <Compile Include="src\app\core.module\Models\index.ts" />
-    <Compile Include="src\app\core.module\Models\user.ts" />
+    <Compile Include="src\app\core.module\infrastructure\deserilizer.ts" />
+    <Compile Include="src\app\core.module\infrastructure\index.ts" />
+    <Compile Include="src\app\core.module\models\gender.ts" />
+    <Compile Include="src\app\core.module\models\index.ts" />
+    <Compile Include="src\app\core.module\models\user.ts" />
     <Compile Include="src\app\core.module\index.ts" />
+    <Compile Include="src\app\core.module\services\index.ts" />
   </ItemGroup>
 
   <ItemGroup>
