@@ -20,7 +20,7 @@ export class UsersService extends BaseService {
     return this.http.get<User>(`${this.webConfig.dataUrlUsers}/${id}`)
       .pipe(
       map(x => {
-        x.lastLogin = GlobalMethods.toDate(x.lastLogin);
+        x.lastLogin = GlobalMethods.toDate(x.lastLogin.toString());
         return x;
       }),
       catchError(error => {

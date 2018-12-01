@@ -1,8 +1,14 @@
-<app-header (onMenuBtClick)="opened = !opened"></app-header>
+<div *ngIf="authorizationService.isAuth() === false">
+  <app-login></app-login>
+</div>
+<div *ngIf="authorizationService.isAuth()">
+  <app-header (onMenuBtClick)="opened = !opened"></app-header>
 
-<app-content [opened]="opened">
-  <p><button mat-button (click)="opened = !opened">sidenav.toggle()</button></p>
-  <test [message]="messageForTest"></test>
-</app-content>
-{{sharedData|json}}
-<app-footer></app-footer>
+  <app-content [opened]="opened">
+    <p><button mat-button (click)="opened = !opened">sidenav.toggle()</button></p>
+    <test [message]="messageForTest"></test>
+  </app-content>
+  {{sharedData|json}}
+  <app-footer></app-footer>
+</div>
+

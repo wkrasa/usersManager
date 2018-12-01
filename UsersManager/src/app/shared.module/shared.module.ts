@@ -11,6 +11,8 @@ import { ContentComponent } from './content.component/content.component';
 import { FooterComponent } from './footer.component/footer.component';
 import { HeaderComponent } from './header.component/header.component';
 import { SideComponent } from './side.component/side.component';
+import { LoginComponent } from './login.component/login.component';
+
 import { TestComponent } from './test.component/test.component';
 
 const sharedModules = [
@@ -18,11 +20,13 @@ const sharedModules = [
   FooterComponent,
   HeaderComponent,
   SideComponent,
+  LoginComponent,
   TestComponent
 ];
 
 @NgModule({
   imports: [
+    FormsModule,
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
@@ -36,6 +40,7 @@ const sharedModules = [
     FooterComponent,
     HeaderComponent,
     SideComponent,
+    LoginComponent,
     TestComponent
   ],
     providers: [

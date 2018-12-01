@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">Login</mat-toolbar>
+<form name="loginForm" #loginForm class="container-fluid" (ngSubmit)="onLogin()">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <mat-form-field class="input-full-width">
+        <input matInput placeholder="Enter your login" name="login" [(ngModel)]="data.login">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <mat-form-field  class="input-full-width">
+        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" name="passowrd" [(ngModel)]="data.passowrd">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <mat-checkbox>Remember me</mat-checkbox>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-6" >
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </div>
+  </div>
+</form>
+{{data|json}}

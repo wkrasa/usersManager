@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData } from '../../core.module';
+import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData, AuthorizationService } from '../../core.module';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,10 @@ export class AppComponent {
   title = 'UsersManager';
   messageForTest = 'test';
 
-  constructor(@Inject(SHARED_DATA) private sharedData: any) {
-
+  constructor(
+    @Inject(SHARED_DATA) private sharedData: any,
+    private authorizationService: AuthorizationService) {
   }
+
+
 }

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,  } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +14,7 @@ import { SharedModule } from '../shared.module/shared.module';
   imports: [
     RouterModule.forRoot([], { enableTracing: true }),
     BrowserModule,
+    FormsModule,
     CoreModule,
     SharedModule,    
   ],
