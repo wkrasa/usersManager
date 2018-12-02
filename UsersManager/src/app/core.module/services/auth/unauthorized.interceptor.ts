@@ -27,6 +27,7 @@ export class UnauthorizedInterceptor implements HttpInterceptor {
         .pipe(
           catchError(err => {
           if (err instanceof HttpErrorResponse && err.status === 401) {
+            console.log("-- UnauthorizedInterceptor: 401 response status, user is NOT authorized, redirection to login page");
             this.authorizationService.logout();
             this.router.navigate([this.webConfig.loginPage]);
             }

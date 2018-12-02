@@ -14,9 +14,10 @@ export class AuthorizationTokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log('--- AuthorizationTokenInterceptor ---');
     if (this.authorizationService.isAuth()) {
+      console.log("-- AuthorizationTokenInterceptor: User is authorized, token added to the request");
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${this.authorizationService.getToken()}`
+          Authorization: this.authorizationService.getToken()
         }
       });
     }

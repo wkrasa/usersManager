@@ -36,6 +36,10 @@ namespace UsersApi
 					options.SerializerSettings.DateFormatString = "yyyy-MM-dd";
 				})
 				.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+			//services.AddAuthentication(o => {
+			//	o.DefaultScheme = SchemesNamesConst.TokenAuthenticationDefaultScheme;
+			//})
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,8 +59,11 @@ namespace UsersApi
 			.AllowAnyMethod()
 			.AllowAnyHeader()
 			.AllowCredentials());
+
+
 			app.UseHttpsRedirection();
-			app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+			app.UseMiddleware<ErrorHandlingMiddleware>();
+			app.UseMiddleware<AuthMiddleware>();
 			app.UseMvc();
 		}
 	}

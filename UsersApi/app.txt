@@ -8,13 +8,14 @@
 + date deserialization
 - http://jasonwatmore.com/post/2018/05/16/angular-6-user-registration-and-login-example-tutorial
 + auth service for angular
+- add logs service
 - auth service for backend
 - modal dialog service
 - popup service
 - global mechanism showing communication error
 + add providers for constant and data (reference object)
 - .net core api: simplest authentication possible (header or token, etc...)
-- add login page
++ add login page
 - form validation basing on 401 response
 + add http 401 iterceptor
 - add mapToType extension function, which will map Object to provided type or object (Object => User)
@@ -30,6 +31,8 @@
 - http auth interceptors
 - angular native for mobile
 - tests (unit + intergration - jasmine)
+- DI and IOC in backend
+- automapper
 
 - configure keycloak
 - docker

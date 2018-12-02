@@ -22,6 +22,7 @@ export class AuthorizationGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (this.authService.isAuth() === false) {
+      console.log("-- AuthorizationGuard: User not authorized and route requires authorization");
       this.router.navigate([this.webConfig.loginPage]);
       return false;
     }

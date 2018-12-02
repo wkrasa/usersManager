@@ -13,6 +13,6 @@ export class LoginComponent {
   }
 
   onLogin() {
-    this.authorizationService.login();
+    this.authorizationService.login(this.data.login, this.data.password);
   }
 }
