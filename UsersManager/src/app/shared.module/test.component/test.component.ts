@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as moment from 'moment';
 // import { setInterval } from 'timers';
 
-import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData, Deserializer, UsersService } from '../../core.module';
+import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData, Deserializer, UsersService, MessageBoxService } from '../../core.module';
 
 @Component({
   selector: 'test',
@@ -24,7 +24,9 @@ export class TestComponent implements OnInit
     private usersService: UsersService,
     private http: HttpClient,
     @Inject(WEB_CONFIG) private webConfig: IWebConfig,
-    @Inject(SHARED_DATA) private sharedData: any) {
+    @Inject(SHARED_DATA) private sharedData: any,
+    private messageBoxService: MessageBoxService) {
+
     setInterval(() => this.data.check = !this.data.check, 1000);
       this.sharedData.test2 = 2222222;
       console.dir(this.sharedData);
@@ -36,6 +38,7 @@ export class TestComponent implements OnInit
     this.usersService.getUser(1).subscribe(x => {
       console.log('user: ');
       console.dir(x);
+      this.messageBoxService.showMessageBox('User downloaded', x.login);
     });
     this.usersService.getUsers().subscribe(response => {
       console.dir(response[0].constructor.name);
@@ -43,7 +46,7 @@ export class TestComponent implements OnInit
       console.dir(response.map(x => moment(x.lastLogin, 'yyyy-MM-dd')));
 
       var user = Deserializer.deserialize(new User(), response[0]);
-      console.dir(user);
+      console.dir(user);     
 
       console.dir(response.map(x => new User()));
       this.dataFromWeb = response;      

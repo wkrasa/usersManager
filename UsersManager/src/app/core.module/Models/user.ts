@@ -5,13 +5,13 @@ import { Gender } from './gender';
         {
 
   id? : number;
-  email: string;
+  email?: string;
  login: string ;
-  password : string;
-  gender: Gender;
+  password? : string;
+  gender?: Gender;
     lastLogin?: Date;
 
-  isActive: boolean;
+  isActive?: boolean;
 
 
 		//public void AddUserToGroup(RoleGroup group)

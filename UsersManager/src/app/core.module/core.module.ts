@@ -3,14 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { AuthorizationService, UsersService, AuthorizationGuard, UnauthorizedInterceptor, AuthorizationTokenInterceptor } from './services';
+import { MaterialImportModule } from '../shared.module/material-import.module';
+
+import { AuthorizationService, UsersService, AuthorizationGuard, UnauthorizedInterceptor, AuthorizationTokenInterceptor, MessageBoxService, MessageBoxComponent, MessageBoxData } from './services';
 import { WEB_CONFIG, WebConfig, SHARED_DATA, SharedData } from './web.config';
 import { GlobalErrorHandler } from './/infrastructure/global.error.handler';
 
 @NgModule({
-    imports: [],
-    declarations: [
-      ],
+  imports: [
+    MaterialImportModule
+  ],
+  declarations: [
+    MessageBoxComponent
+  ],
+  exports: [
+    MessageBoxComponent
+  ],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
     { provide: HTTP_INTERCEPTORS, useClass: UnauthorizedInterceptor, multi: true },
@@ -19,7 +27,11 @@ import { GlobalErrorHandler } from './/infrastructure/global.error.handler';
     AuthorizationService,
     { provide: WEB_CONFIG, useValue: WebConfig },
     { provide: SHARED_DATA, useValue: SharedData },
-    UsersService
-      ]
+    UsersService,
+    MessageBoxService
+  ],
+  entryComponents: [
+    MessageBoxComponent
+  ]
 })
 export class CoreModule { }

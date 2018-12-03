@@ -22,12 +22,7 @@ export class UsersService extends BaseService {
       map(x => {
         x.lastLogin = GlobalMethods.toDate(x.lastLogin.toString());
         return x;
-      }),
-      catchError(error => {
-        // this.popupService.showError(...);
-      })
-        
-      );
+      }));
   }
 
   getUsers(): Observable<User[]> {

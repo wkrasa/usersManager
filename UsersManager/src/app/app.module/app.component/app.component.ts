@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData, AuthorizationService } from '../../core.module';
+import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData, AuthorizationService, MessageBoxService } from '../../core.module';
 
 @Component({
   selector: 'app-root',

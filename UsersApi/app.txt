@@ -9,8 +9,8 @@
 - http://jasonwatmore.com/post/2018/05/16/angular-6-user-registration-and-login-example-tutorial
 + auth service for angular
 - add logs service
-- auth service for backend
-- modal dialog service
++ auth service for backend
+~ messsage box service
 - popup service
 - global mechanism showing communication error
 + add providers for constant and data (reference object)
@@ -28,7 +28,7 @@
 + left side menu
 - admin panel
 - roles+rights
-- http auth interceptors
++ http auth interceptors
 - angular native for mobile
 - tests (unit + intergration - jasmine)
 - DI and IOC in backend

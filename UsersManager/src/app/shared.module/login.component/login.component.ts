@@ -6,8 +6,13 @@ import { User, WEB_CONFIG, IWebConfig, SHARED_DATA, SharedData, AuthorizationSer
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent {
-  data = {};
+  data = {
+    login: null,
+    password: null
+  };
 
   constructor(private authorizationService: AuthorizationService) {    
   }

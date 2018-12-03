@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild, OnInit, Injectable, Inject } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { Observable, fromEvent } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
@@ -22,7 +22,7 @@ export class AuthorizationService {
   login(login: string, pass: string) {
     var data = { login: login, pass: pass };
     this.http.post(this.webConfig.dataUrlAuth, data, { observe: 'response' })
-      .subscribe((response: Response) => {
+      .subscribe((response: HttpResponse<any>) => {
         console.dir(response);
         if (response.status === 200) {
           console.log("-- AuthorizationService: User successfully authorized, token saved");
